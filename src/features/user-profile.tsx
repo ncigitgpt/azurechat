@@ -43,7 +43,7 @@ const UserProfile = () => {
               {session?.user?.name}
             </p>
             <p className="text-xs leading-none text-muted-foreground">
-              {session?.user?.email}
+
             </p>
             <p className="text-xs leading-none text-muted-foreground">
               {session?.user?.isAdmin ? "Admin" : ""}
