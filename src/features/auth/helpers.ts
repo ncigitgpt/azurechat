@@ -14,7 +14,8 @@ export const userSession = async (): Promise<UserModel | null> => {
 export const userHashedId = async (): Promise<string> => {
   const user = await userSession();
   if (user) {
-    return hashValue(user.email);
+//    return hashValue(user.email);
+    return hashValue('');
   }
 
   throw new Error("User not found");
