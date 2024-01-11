@@ -18,6 +18,7 @@ export const ChatTypeSelector: FC<Prop> = (props) => {
       defaultValue={chatBody.chatType}
       onValueChange={(value) => onChatTypeChange(value as ChatType)}
     >
+        {session?.user?.isAdmin ? (
       <TabsList className="grid w-full grid-cols-2 h-12 items-stretch">
        <TabsTrigger
           value="simple"
@@ -25,7 +26,7 @@ export const ChatTypeSelector: FC<Prop> = (props) => {
           disabled={props.disable}
         >
           <MessageCircle size={20} /> 通常利用
-        </TabsTrigger>    
+        </TabsTrigger>
         <TabsTrigger
           value="web"
           className="flex gap-1"
@@ -33,7 +34,10 @@ export const ChatTypeSelector: FC<Prop> = (props) => {
         >
           <Globe size={20} /> Web検索
         </TabsTrigger>   
-      </TabsList>
+     </TabsList>
+         ) : (
+          <></>
+        )}
     </Tabs>
   );
 };
